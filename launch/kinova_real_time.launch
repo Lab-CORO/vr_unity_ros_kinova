@@ -1,0 +1,16 @@
+<launch>
+    <arg name="host" default="172.31.27.154"/>
+
+    <!-- Add the kortex_drivers -->
+    <include file="$(find kortex_driver)/launch/kortex_driver.launch">
+        <arg name="gripper"     value="robotiq_2f_85"/>
+        <arg name="ip_address"  value="$(arg host)"/>
+    </include>
+
+    <!-- Add the kinova_twist_converter script -->
+    <node pkg="unity_kinova" name="twist_converter" type="kinova_twist_converter.py"/>
+
+    <!-- Add the ROS-TCP-Endpoint drivers-->
+    <include file="$(find ros_tcp_endpoint)/launch/endpoint.launch"/>
+
+</launch>
