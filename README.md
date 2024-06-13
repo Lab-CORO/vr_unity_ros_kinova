@@ -21,7 +21,9 @@ This ensures that the Endpoint works with Python 3.
 ## Usage
 
 To launch the control layer so that the Unity messages are transferred to the robot, you can run the command:
-`roslaunch unity_kinova kinova_real_time.launch`
+```bash
+roslaunch unity_kinova kinova_real_time.launch
+```
 This command will start the Kinova ROS Kortex drivers, the ROS-TCP-Endpoint drivers, and the control layer node. For more information about the Kinova Kortex and its possible arguments, you can look at their [ReadMe page](https://github.com/Kinovarobotics/ros_kortex/blob/noetic-devel/kortex_driver/readme.md). Make sure to modify the host argument to the IP of your robot.
 
 ## Disclaimer
